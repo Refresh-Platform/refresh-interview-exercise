@@ -1,8 +1,8 @@
-# Task Traverser - Full Stack Todo App
+# Refresh Todo - Full Stack Interview Exercise
 
 ## Overview
 
-Task Traverser is a robust full-stack web application built with React.js, Express.js, Node.js, and PostgreSQL as the database. It serves as a powerful task management system, providing users with the ability to create, update, and delete tasks seamlessly. This README.md provides a comprehensive guide to set up, run, and contribute to the project.
+Refresh Todo is a full-stack web application built with React.js, Express.js, Node.js, and PostgreSQL as the database. We use it at Refresh as part of our technical interview process for Full Stack Software Engineer candidates.
 
 ## Features
 
@@ -77,7 +77,7 @@ task-traverser/
    - Execute the SQL script in `sql/database.sql` to create the necessary database and table.
 
 4. **Environment Variables:**
-   - Create a `.env` file in the `server` directory and configure the PostgreSQL connection details.
+   - Update the `.env` file in the `server` directory with your PostgreSQL connection details.
 
      ```plaintext
      DB_HOST=localhost
@@ -101,7 +101,7 @@ task-traverser/
      ```
 
 6. **Open in Browser:**
-   - Open your browser and navigate to `http://localhost:3000` to access the Task Traverser application.
+   - Open your browser and navigate to `http://localhost:3000` to access the Refresh Todo application.
 
 ## NPM Scripts
 
@@ -112,6 +112,6 @@ task-traverser/
 - **Server:**
   - `npm start`: Start the Express.js server.
 
-Contributions to Task Traverser are welcome! Feel free to open issues, submit pull requests, or suggest improvements.
+Contributions to Refresh Todo are welcome! Feel free to open issues, submit pull requests, or suggest improvements.
 
-Happy task traversing! 🚀📝
+Happy interviewing! 🚀📝
