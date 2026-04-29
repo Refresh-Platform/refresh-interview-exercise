@@ -23,7 +23,7 @@ app.post("/RefreshTodo", async (req, res) => {
         res.status(201).json(newTodo.rows[0]);
     } catch (err) {
         console.error(err.message);
-        res.status(500).send("Internal Server Error");
+        res.status(500).send(err.message);
     }
 });
 
@@ -39,8 +39,7 @@ app.get("/RefreshTodo", async (req, res) => {
         res.json(allTodos.rows);
     } catch (err) {
         console.error(err.message);
-        res.json({status:'error'});
-        //res.status(500).send("Internal Server Error");
+        res.status(500).send(err.message);
     }
 });
 
@@ -56,6 +55,7 @@ app.get("/RefreshTodo/:id", async (req, res) => {
         res.json(todo.rows[0]);
     } catch (err) {
         console.error(err.message);
+        res.status(500).send(err.message);
     }
 });
 
@@ -73,6 +73,28 @@ app.put("/RefreshTodo/:id", async (req, res) => {
         res.json("Todo was updated!");
     } catch (err) {
         console.error(err.message);
+        res.status(500).send(err.message);
+    }
+});
+
+// update the todo list order
+app.post("/RefreshTodo/order", async (req, res) => {
+    try {
+        const { orderedIds } = req.body; // Expecting an array of todo IDs in the new order
+
+        // Update the order of each todo based on its position in the orderedIds array
+        for (let i = 0; i < orderedIds.length; i++) {
+            const id = orderedIds[i];
+            await pool.query(
+                "UPDATE todo SET order_index = $1 WHERE todo_id = $2",
+                [i, id]
+            );
+        }
+
+        res.json("Todo order was updated!");
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send(err.message);
     }
 });
 
@@ -87,6 +109,7 @@ app.delete("/RefreshTodo/:id", async (req, res) => {
         res.json("Todo was deleted!");
     } catch (err) {
         console.log(err.message);
+        res.status(500).send(err.message);
     }
 });
 

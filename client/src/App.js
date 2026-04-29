@@ -4,7 +4,7 @@ import "./App.css";
 //components
 
 import InputTodo from "./components/inputTodo";
-import ListTodos from "./components/listTodo";
+import ListTodos from "./components/TodoList";
 
 function App() {
   return (

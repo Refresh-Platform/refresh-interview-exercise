@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
-
-import EditTodo from "./editTodo";
+import {useSortable} from '@dnd-kit/react/sortable';
+import ToDoItem from './ToDoItem';
 
 const ListTodos = () => {
   const [todos, setTodos] = useState([]);
@@ -54,25 +54,19 @@ const ListTodos = () => {
             <td>john@example.com</td>
           </tr> */}
           {todos.map(todo => (
-            <tr key={todo.todo_id}>
-              <td>{todo.description}</td>
-              <td>
-                <EditTodo todo={todo} />
-              </td>
-              <td>
-                <button
-                  className="btn btn-danger"
-                  onClick={() => deleteTodo(todo.todo_id)}
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
+            <ToDoItem 
+              todo={todo} 
+              onClick={deleteTodo}
+              key={todo.todo_id}
+            />
           ))}
         </tbody>
       </table>
     </Fragment>
   );
 };
+
+const SortableItem = ({id, index}) => {
+}
 
 export default ListTodos;
