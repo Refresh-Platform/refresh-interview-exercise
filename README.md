@@ -9,7 +9,7 @@ Refresh Todo is a full-stack web application built with React.js, Express.js, No
 - **User-friendly Interface**: Intuitive and responsive UI powered by React.js.
 - **Server-side Logic**: Efficient server-side handling using Express.js and Node.js.
 - **Database Integration**: Seamless integration with PostgreSQL for data storage.
-- **Task CRUD Operations**: Perform Create, Read, Update, and Delete operations on tasks.
+- **Todo CRUD Operations**: Perform Create, Read, Update, and Delete operations on Todos.
 - **NPM Scripts**: Convenient npm scripts for easy project setup and execution.
 
 ## Tech Stack
@@ -22,7 +22,7 @@ Refresh Todo is a full-stack web application built with React.js, Express.js, No
 ## Project Structure
 
 ```plaintext
-task-traverser/
+refresh-interview-exercise/
 │
 ├── client/
 │   ├── public/
@@ -56,8 +56,8 @@ task-traverser/
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/task-traverser.git
-   cd task-traverser
+   git clone git@github.com:Refresh-Platform/refresh-interview-exercise.git
+   cd refresh-interview-exercise
    ```
 
 2. **Install Dependencies:**
